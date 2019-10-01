@@ -3,13 +3,13 @@ Simple Powershell Script ASking User For Input and Killing Processes
 by shad0wmast3r ("Andy Kukuc") 
 ALSO WRITTEN IN VIM BASH FOR WINDOWS ALL GLORY TO VIM
 #>
+cls
 start 'C:\Windows\System32\notepad.exe'
 function run_asshole{
-  cls
   #start 'C:\Windows\System32\notepad.exe'
 while($true){
   Write-Host 'Simple Powershell script to kill proccsess.'
-  Write-Host 'By: shad0wmast3r (Andy Kukuc).'`n -ForegroundColor Red -BackgroundColor Black
+  Write-Host 'By: shad0wmast3r (Andy Kukuc).'`n -ForegroundColor Cyan -BackgroundColor Black
   $user_specific_process=Read-Host 'Please enter the process name you wish to kill.'`n
   $added_wildcard=$user_specific_process+"*"
   #Write-Host 'Printing Users Input And Adding A Wildcard'$added_wildcard'.' -ForegroundColor Cyan`n
