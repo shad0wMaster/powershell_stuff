@@ -20,7 +20,7 @@ while($true){
     Write-Host `n'Killing process with Stop-Process -Name '$user_specific_process'.' -ForegroundColor Green -BackgroundColor Black
     get-process $added_wildcard
     Stop-Process -Name $added_wildcard -Force
-    Start-Sleep 3
+    Start-Sleep 2.75
     cls
     }
     }
