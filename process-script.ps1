@@ -5,7 +5,6 @@ ALSO WRITTEN IN VIM BASH FOR WINDOWS ALL GLORY TO VIM
 #>
 start 'C:\Windows\System32\notepad.exe'
 function run_asshole{
-  -BackgroundColor Black
   cls
   #start 'C:\Windows\System32\notepad.exe'
 while($true){
@@ -16,7 +15,6 @@ while($true){
   #Write-Host 'Printing Users Input And Adding A Wildcard'$added_wildcard'.' -ForegroundColor Cyan`n
   #Start-Sleep 3
   if((Get-Process -name $added_wildcard -ErrorAction SilentlyContinue) -eq $null){
-    Write-Host `n'ERROR SPELL RIGHT NEXT TIME!' -ForegroundColor Red -BackgroundColor Black
     Write-Host 'Invalid Input'$added_wildcard'.'`n -ForegroundColor Red -BackgroundColor Black
   }else{
     Write-Host `n'Killing process with Stop-Process -Name '$user_specific_process'.' -ForegroundColor Green -BackgroundColor Black
