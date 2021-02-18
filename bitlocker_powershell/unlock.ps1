@@ -2,22 +2,42 @@
 #Simple script unlocks your hard drive
 
 <#So in here we are taking user input and going to save and then convert it into an int#>
-$colon=":" #This will add on the colon to the drive letter since its windows and it will bitch
-$number_input=Read-Host 'Please enter number of drives that will be unlocked.'`n <#This prints the message#>
-$convert_to_int=[int]$number_input #convert the string to an Integer
-$counter=0;
-$drive_array=@()
-while($counter -lt $convert_to_int){
+
+#This will add on the colon to the drive letter since its windows and it will bitch
+$colon=":" 
+
+ <#This prints the message and reads the input#>
+$number_input=Read-Host 'Please enter number of drives that will be unlocked.'`n
+
+<#convert the string to an Integer#>
+$convert_to_int=[int]$number_input 
+
+<#Initiate a Counter Variable for While Loooooopppppp#>
+$counter=0; 
+
+<#start an array fuck face#>
+$drive_array=@() 
+
+<#Damn while loops for arrays are simple#>
+while($counter -lt $convert_to_int){ 
+     <#Reads the drive letter and saves them to an array#>
     $drive_letter=Read-Host 'Please enter letters of the drives to be unlocked.'`n
 
-    write-host 'Print out the length of the array'
+    <#Adding the drive letters to an array.#>
     $drive_array+=$drive_letter.ToUpper()+$colon
-    $drive_array.length
+    
+    <#Start coutner lol#>
     $counter+=1;
+
+    <#Debugging life
+    $drive_array.length debugging bullshit like always
+    write-host 'Print out the length of the array'#>
 }
+
+<#Debugging life
 write-host 'Out of while loop and prints out values inside the array'
 write-host $drive_array[0..$convert_to_int]
-
+#>
 <#
 $drive1=ConvertTo-SecureString "Input the password in here" -AsPlainText -Force
 $drive2=ConvertTo-SecureString "Input the password in here" -AsPlainText -Force
