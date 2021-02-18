@@ -1,9 +1,9 @@
-#Written by Andy 'shad0wMast3r' Kukuc
-#Simple script unlocks your hard drive
+<#Written by Andy 'shad0wMast3r' Kukuc#>
+<#Simple script unlocks your hard drive#>
 
 <#So in here we are taking user input and going to save and then convert it into an int#>
 
-#This will add on the colon to the drive letter since its windows and it will bitch
+<#This will add on the colon to the drive letter since its windows and it will bitch#>
 $colon=":" 
 
  <#This prints the message and reads the input#>
@@ -37,8 +37,8 @@ while($counter -lt $convert_to_int){
 <#Debugging life
 write-host 'Out of while loop and prints out values inside the array'
 write-host $drive_array[0..$convert_to_int]
-#>
-<#
+
+<# THIS IS OLD CODE THAT WILL BE REMOVED JUST NEED TO FIGURE OUT THE SYNTAX BUT IT SHOULDNT BE THAT HARD
 $drive1=ConvertTo-SecureString "Input the password in here" -AsPlainText -Force
 $drive2=ConvertTo-SecureString "Input the password in here" -AsPlainText -Force
 $drive3=ConvertTo-SecureString "Input the password in here" -AsPlainText -Force
