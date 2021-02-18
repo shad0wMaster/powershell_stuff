@@ -8,9 +8,10 @@ $convert_to_int=[int]$number_input #convert the string to an Integer
 $counter=0;
 $drive_array=@()
 while($counter -lt $convert_to_int){
-    $drive_letter=Read-Host 'Please enter letters of the drives to be unlocked.'`n 
+    $drive_letter=Read-Host 'Please enter letters of the drives to be unlocked.'`n
+
     write-host 'Print out the length of the array'
-    $drive_array+=$drive_letter+$colon.ToUpper()
+    $drive_array+=$drive_letter.ToUpper()+$colon
     $drive_array.length
     $counter+=1;
 }
