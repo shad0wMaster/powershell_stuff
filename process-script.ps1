@@ -3,13 +3,11 @@
   by shad0wmast3r ("Andy Kukuc") 
   ALSO WRITTEN IN VIM BASH FOR WINDOWS ALL GLORY TO VIM
   #>
-
 Set-PSReadlineOption -HistorySaveStyle SaveNothing
 Clear-Host
-Start-Process 'C:\Windows\System32\notepad.exe'
+Start-Process 'C:\Windows\System32\notepad.exe' <#used with debungging#>
 function run_asshole {
   #start 'C:\Windows\System32\notepad.exe'
-  $counter=0;
   while ($true) {
     Write-Host 'Simple Powershell script to kill proccsess.'
     Write-Host 'By: shad0wmast3r (Andy Kukuc).'`n -ForegroundColor Cyan -BackgroundColor Black
@@ -23,19 +21,19 @@ function run_asshole {
     else {
       Write-Host `n'Displaying Current Running Status! '$user_specific_process'.' -ForegroundColor Green -BackgroundColor Black
       get-process $added_wildcard
-      Write-Host `n'Would You Like To Quit? Y/n' -ForegroundColor Yellow -BackgroundColor Black
+      Write-Host `n'Would You Like To Stop the Process? Y/n' -ForegroundColor Yellow -BackgroundColor Black
       $chose_to_delete = Read-Host 
-      if ($chose_to_delete -eq 'y') {
+      if ($chose_to_delete -eq 'n') {
         Write-Host `n'Exiting To Powershell!' -ForegroundColor Red -BackgroundColor Black
         Start-Sleep 1
         clear-history
         Clear-Host;
         exit(0)
       }
-      if ($chose_to_delete -eq 'n') {
+      if ($chose_to_delete -eq 'Y') {
         Write-Host `n'Stopping all process from user input: '$added_wildcard'!' -ForegroundColor Green -BackgroundColor Black
         Stop-Process -Name $added_wildcard -Force
-        Start-Sleep 2.75
+        Start-Sleep 2.5
         clear-history
       }
       else {
