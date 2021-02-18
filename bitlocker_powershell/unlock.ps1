@@ -37,9 +37,12 @@ while($counter -lt $convert_to_int){
 }
     
 #for some odd reason when passing in the array variable and starting a count the $convert_to_int does not save will fix later
-Unlock-Bitlocker -MountPoint $drive_array[0..$convert_to_int] -Password $password_array[0..$convert_to_int]
+# Unlock-Bitlocker -MountPoint $drive_array[0..$convert_to_int] -Password $password_array[0..$convert_to_int]
 
-   <#
+#This works because only 1 drive is specified at array index 0. The drive array works but the password one bitches
+Unlock-Bitlocker -MountPoint $drive_array[0..$convert_to_int] -Password $password_array[0] 
+
+<#
     Debugging life
     $drive_array.length debugging bullshit like always
     write-host 'Print out the length of the array'
