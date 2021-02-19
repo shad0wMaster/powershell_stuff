@@ -1,0 +1,11 @@
+$1TB_Inland_Unlock=ConvertTo-SecureString "A]a}KKbU+!10g(uX#bpu%}VbR],#)#!(\dmI\Dv" -AsPlainText -Force
+$M2_Crucial_Unlock=ConvertTo-SecureString "Input Password" -AsPlainText -Force
+#$Seagate_Unlock=ConvertTo-SecureString "H=9YR{{jlKR+" -AsPlainText -Force
+$1TB_Intel_660p=ConvertTo-SecureString "F>-#I5;H5" -AsPlainText -Force
+
+$drive_array=@("D:","E:","H:")
+$password_array=@($1TB_Inland_Unlock,$M2_Crucial_Unlock,$1TB_Intel_660p)
+
+Unlock-Bitlocker -MountPoint $drive_array[0] -Password $password_array[0]
+Unlock-Bitlocker -MountPoint $drive_array[1] -Password $password_array[1]
+Unlock-Bitlocker -MountPoint $drive_array[2] -Password $password_array[2]

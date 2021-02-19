@@ -11,7 +11,7 @@ $colon=":"
 $number_input=Read-Host 'Please enter number of drives that will be unlocked'
 
 <#convert the string to an Integer#>
-$convert_to_int=[int]$number_input 
+$convert_to_int=[int]$number_input-1 
 
 <#Initiate a Counter Variable for While Loooooopppppp#>
 $counter=0; 
